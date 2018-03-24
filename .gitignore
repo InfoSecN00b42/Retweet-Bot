@@ -1,4 +1,6 @@
-realkeys.py
+settings.py
 .vscode/**
 __pycache__/**
 *.pyc
+.idea/**
+**.obj
