@@ -1,7 +1,4 @@
 # Retweet bot for Twitter, using Python and Tweepy.
-# Search query via hashtag or keyword.
-# Author: Tyler L. Jones || CyberVox
-# Date: Saturday, May 20th - 2017.
 # License: MIT License.
 
 import tweepy
@@ -11,7 +8,7 @@ import pickle
 from time import sleep
 
 # Import in your Twitter application keys, tokens, and secrets.
-# Make sure your keys.py file lives in the same directory as this .py file.
+# Make sure your settings.py file lives in the same directory as this .py file.
 from settings import *
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
