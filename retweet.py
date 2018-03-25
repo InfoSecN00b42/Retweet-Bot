@@ -2,7 +2,7 @@
 # License: MIT License.
 
 import tweepy
-from LastRetweet import LastRetweet
+from RetweetObject import RetweetObject
 import dateparser
 import pickle
 from time import sleep
@@ -40,7 +40,7 @@ for tweet in reversed(fetchedTweets):
         tweet.retweet()
         # print('Retweet published successfully.')
         if tweet == fetchedTweets[0]:
-            lastRetweet = LastRetweet(tweet)
+            lastRetweet = RetweetObject(tweet)
             file_lastRetweet = open('lastRetweet.obj', 'wb')
             pickle.dump(lastRetweet, file_lastRetweet)
             file_lastRetweet.close()
