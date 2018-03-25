@@ -2,9 +2,10 @@
 # License: MIT License.
 
 import tweepy
-from LastRetweet import LastRetweet
 import dateparser
 import pickle
+from RetweetObject import RetweetObject
+from RetweetStore import RetweetStore
 from time import sleep
 
 # Import in your Twitter application keys, tokens, and secrets.
@@ -15,16 +16,7 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
-try:
-    file_lastRetweet = open('lastRetweet.obj', 'rb')
-    test = pickle.load(file_lastRetweet)
-    file_lastRetweet.close()
-
-except FileNotFoundError:
-    print("No last retweet")
-
-except TypeError:
-    print("Arg type error")
+retweetStore = RetweetStore('tweetStore.obj')
 
 # Where q='#example', change #example to whatever hashtag or keyword you want to search.
 # Where items(5), change 5 to the amount of retweets you want to tweet.
@@ -36,25 +28,31 @@ for tweet in tweepy.Cursor(api.search, q=hashtag).items(20):
 for tweet in reversed(fetchedTweets):
     try:
         # print('\nRetweet Bot found tweet by @' + tweet.user.screen_name + '. ' + 'Attempting to retweet.')
-        print(tweet.created_at)
-        tweet.retweet()
-        # print('Retweet published successfully.')
-        if tweet == fetchedTweets[0]:
-            lastRetweet = LastRetweet(tweet)
-            file_lastRetweet = open('lastRetweet.obj', 'wb')
-            pickle.dump(lastRetweet, file_lastRetweet)
-            file_lastRetweet.close()
-            print(lastRetweet.id)
+        if(retweetStore.hasBeenStored(tweet.id)):
+            print("Already retweeted")
+        else:
+            print(tweet.created_at)
+            print(tweet.user.id)
+            tweet.retweet()
+            retweetStore.addRetweet(tweet.id, RetweetObject(tweet))
+            # Where sleep(10), sleep is measured in seconds.
+            # Change 10 to amount of seconds you want to have in-between retweets.
+            # Read Twitter's rules on automation. Don't spam!
+            sleep(5)
+            # print('Retweet published successfully.')
 
-        # Where sleep(10), sleep is measured in seconds.
-        # Change 10 to amount of seconds you want to have in-between retweets.
-        # Read Twitter's rules on automation. Don't spam!
-        sleep(5)
+        if tweet == fetchedTweets[0]:
+            print('Last Retweet')
 
     # Some basic error handling. Will print out why retweet failed, into your terminal.
     except tweepy.TweepError as error:
-        print('\nError. Retweet not successful. Reason: ')
-        print(error.reason)
-
+        if(error.api_code == 327):
+            print('Already retweeted, but not yet in store')
+            retweetStore.addRetweet(tweet.id, RetweetObject(tweet))
+        else:
+            print('\nError. Retweet not successful. Reason: ')
+            print(error.reason)
     except StopIteration:
         break
+
+retweetStore.saveStoreToDisk()
