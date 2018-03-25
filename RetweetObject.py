@@ -1,5 +1,4 @@
 class RetweetObject:
-
     def __init__(self, tweet):
         self.id = tweet.id
         self.authorId = tweet.user.id
