@@ -37,7 +37,8 @@ for tweet in reversed(fetchedTweets):
     try:
         # print('\nRetweet Bot found tweet by @' + tweet.user.screen_name + '. ' + 'Attempting to retweet.')
         print(tweet.created_at)
-        tweet.retweet()
+        print(tweet.user.id)
+        # tweet.retweet()
         # print('Retweet published successfully.')
         if tweet == fetchedTweets[0]:
             lastRetweet = RetweetObject(tweet)
