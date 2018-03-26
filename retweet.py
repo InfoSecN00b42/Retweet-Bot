@@ -18,11 +18,9 @@ api = tweepy.API(auth)
 
 retweetStore = RetweetStore('tweetStore.obj')
 
-# Where q='#example', change #example to whatever hashtag or keyword you want to search.
-# Where items(5), change 5 to the amount of retweets you want to tweet.
 # Make sure you read Twitter's rules on automation - don't spam!
 fetchedTweets = []
-for tweet in tweepy.Cursor(api.search, q=hashtag).items(20):
+for tweet in tweepy.Cursor(api.search, q=hashtag).items(maximum_tweets_per_call):
     fetchedTweets.append(tweet)
 
 for tweet in reversed(fetchedTweets):
