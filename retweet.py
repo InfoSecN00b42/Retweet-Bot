@@ -28,21 +28,14 @@ for tweet in tweepy.Cursor(api.search, q=hashtag).items(20):
 for tweet in reversed(fetchedTweets):
     try:
         # print('\nRetweet Bot found tweet by @' + tweet.user.screen_name + '. ' + 'Attempting to retweet.')
-        if(retweetStore.hasBeenStored(tweet.id)):
-            print("Already retweeted")
-        else:
-            print(tweet.created_at)
-            print(tweet.user.id)
+        if(not retweetStore.hasBeenStored(tweet.id)):
             tweet.retweet()
             retweetStore.addRetweet(tweet.id, RetweetObject(tweet))
             # Where sleep(10), sleep is measured in seconds.
             # Change 10 to amount of seconds you want to have in-between retweets.
             # Read Twitter's rules on automation. Don't spam!
             sleep(5)
-            # print('Retweet published successfully.')
-
-        if tweet == fetchedTweets[0]:
-            print('Last Retweet')
+            print('Retweet published successfully.')
 
     # Some basic error handling. Will print out why retweet failed, into your terminal.
     except tweepy.TweepError as error:
