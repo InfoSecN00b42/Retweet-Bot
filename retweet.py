@@ -26,8 +26,6 @@ api = tweepy.API(auth)
 retweetGuard = RetweetGuard(api.blocks_ids())
 retweetStore = RetweetStore('tweetStore.obj')
 
-# Where q='#example', change #example to whatever hashtag or keyword you want to search.
-# Where items(5), change 5 to the amount of retweets you want to tweet.
 # Make sure you read Twitter's rules on automation - don't spam!
 fetchedTweets = []
 
