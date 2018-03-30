@@ -19,21 +19,28 @@ from settings import hashtag
 from settings import maximum_tweets_per_call
 from settings import testing
 
+# Authenticating
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
+# Initializing
 retweetGuard = RetweetGuard(api.blocks_ids())
 retweetStore = RetweetStore('tweetStore.obj')
 
-# Make sure you read Twitter's rules on automation - don't spam!
-fetchedTweets = []
+# Clean up possible new blocks
+retweetGuard.clean_up_retweets(retweetStore, api)
 
+# Search Tweets and Retweet
+fetchedTweets = []
+# Make sure you read Twitter's rules on automation - don't spam!
 for tweet in tweepy.Cursor(api.search, q=hashtag).items(maximum_tweets_per_call):
+    # Collect a list of approved tweets
     if(retweetGuard.preliminary_tweet_test(tweet)):
         #print("Tweet was approved.")
         fetchedTweets.append(tweet)
 
+# Retweet them in reverse order
 for tweet in reversed(fetchedTweets):
     try:
         if (not retweetStore.hasBeenStored(tweet.id)):
