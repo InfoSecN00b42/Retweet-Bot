@@ -44,7 +44,7 @@ for i in range(1, number_of_pages+1):
 print("Collected : " + str(len(listOfOwnTweets)) + " tweets from timeline")
 
 for tweet in listOfOwnTweets:
-    if (not retweetStore.hasBeenStored(tweet.id)) and hasattr(tweet, "retweeted_status"):
+    if hasattr(tweet, "retweeted_status") and not retweetStore.hasBeenStored(tweet.retweeted_status.id):
         retweet = RetweetObject(tweet)
         retweetStore.addRetweet(retweet.getTweetId(), retweet)
         print(".", end="")

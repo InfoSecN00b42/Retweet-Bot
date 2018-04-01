@@ -31,7 +31,6 @@ class RetweetGuard:
 
     def clean_up_retweets(self, tweetStore, api):
         ids = []
-        print("Cleaning up retweets")
         for retweet in tweetStore.getAllRetweets():
             if retweet.getUserId() in self._blocked_ids:
                 # Remove a retweet from timeline and store
