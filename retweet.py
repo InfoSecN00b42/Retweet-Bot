@@ -19,6 +19,7 @@ from settings import access_token_secret
 from settings import hashtag
 from settings import maximum_tweets_per_call
 from settings import testing
+from settings import seconds_between_retweets
 
 # Authenticating
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
@@ -65,7 +66,7 @@ for tweet in reversed(fetchedTweets):
         if not retweetStore.hasBeenStored(tweet.id):
             retweet = tweet.retweet()
             retweetStore.addRetweet(tweet.id, RetweetObject(retweet))
-            sleep(1)
+            sleep(seconds_between_retweets)
 
     # Some basic error handling. Will print out why retweet failed, into your terminal.
     except tweepy.TweepError as error:
