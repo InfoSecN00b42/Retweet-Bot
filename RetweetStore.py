@@ -52,6 +52,10 @@ class RetweetStore:
     def addRetweet(self, tweetId, retweet):
         self.__tweetStore[tweetId] = retweet
 
+    # Remove a retweet from the store
+    def removeRetweet(self, tweetId):
+        self.__tweetStore.pop(tweetId)
+
     # Synchronizes with external dictionary
     def synchronize(self, externalTweetStore):
         self.__tweetStore.update(externalTweetStore)
