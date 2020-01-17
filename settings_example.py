@@ -8,6 +8,7 @@ access_token_secret = 'secret'
 # Where maximum_tweets_per_call=5, change 5 to the amount of retweets you want to tweet per call.
 # Make sure you read Twitter's rules on automation - don't spam!
 hashtag = '#apples%20OR%20#oranges%20-filter:retweets'
+ourAddeage = '#pears #areFruitsToo'
 # amount of tweets fetched per call and seconds between retweets
 maximum_tweets_per_call = 12
 seconds_between_retweets = 5
