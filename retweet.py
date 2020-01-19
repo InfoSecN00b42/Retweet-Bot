@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 # Retweet bot for Twitter, using Python and Tweepy.
 # License: MIT License.
 
