@@ -19,31 +19,33 @@ substitutions = \
           "(?i)pray:🛐", \
           "(?i)&gt;:➡️", \
           "(?i)&amp;:&", \
+          # Feds \
           "(?i)GCHQ:👻", \
           "CIA:👻", \
           "FBI:👻", \
           "NSA:👻", \
+          # Flags \
           "U.S.:🇺🇲", \
           "America:🇺🇲", \
           "American:🇺🇲", \
+          "(?i)Dutch:🇳🇱", \
+          "(?i)France:🇫🇷", \
+          "(?i)German:🇩🇪", \
+          "(?i)Germany:🇩🇪", \
+          "(?i)India:🇮🇳", \
+          "(?i)Indian:🇮🇳", \
           "(?i)Iran:🇮🇷", \
           "(?i)Iranian:🇮🇷", \
           "(?i)Japan:🇯🇵", \
           "(?i)Japanese:🇯🇵", \
           "(?i)Luxembourg:🇱🇺", \
           "(?i)Luxemburg:🇱🇺", \
-          "(?i)Russia:🇷🇺", \
-          "(?i)Russian:🇷🇺", \
-          "(?i)Dutch:🇳🇱", \
-          "(?i)German:🇩🇪", \
-          "(?i)Germany:🇩🇪", \
-          "(?i)France:🇫🇷", \
-          "(?i)Ukrain:🇺🇦", \
-          "(?i)Ukrainian:🇺🇦", \
-          "(?i)India:🇮🇳", \
-          "(?i)Indian:🇮🇳", \
           "(?i)Malaysia:🇲🇾", \
           "(?i)Malaysian:🇲🇾", \
+          "(?i)Russia:🇷🇺", \
+          "(?i)Russian:🇷🇺", \
+          "(?i)Ukrain:🇺🇦", \
+          "(?i)Ukrainian:🇺🇦", \
           "(?i)exploit:sexploit", \
           "(?i)cloud:☁️", \
           "(?i)application:app", \
