@@ -12,7 +12,8 @@ substitutions = \
           "(?i)bigdata:bigblabla", \
           "(?i)2FA:0fuckAuth", \
           "(?i)security:insecurity", \
-          "(?i)hacker?:🐱💻", \
+          "(?i)hackers:🐱💻", \
+          "(?i)hacker:🐱💻", \
           "(?i) and : & ", \
           "(?i)iot:IoT💩", \
           "(?i)pray:🛐", \
@@ -23,9 +24,41 @@ substitutions = \
           "FBI:👻", \
           "NSA:👻", \
           "U.S.:🇺🇲", \
+          "America:🇺🇲", \
+          "American:🇺🇲", \
           "(?i)Iran:🇮🇷", \
+          "(?i)Iranian:🇮🇷", \
           "(?i)Japan:🇯🇵", \
+          "(?i)Japanese:🇯🇵", \
           "(?i)Luxembourg:🇱🇺", \
           "(?i)Luxemburg:🇱🇺", \
           "(?i)Russia:🇷🇺", \
+          "(?i)Russian:🇷🇺", \
+          "(?i)Dutch:🇳🇱", \
+          "(?i)German:🇩🇪", \
+          "(?i)Germany:🇩🇪", \
+          "(?i)France:🇫🇷", \
+          "(?i)Ukrain:🇺🇦", \
+          "(?i)Ukrainian:🇺🇦", \
+          "(?i)India:🇮🇳", \
+          "(?i)Indian:🇮🇳", \
+          "(?i)Malaysia:🇲🇾", \
+          "(?i)Malaysian:🇲🇾", \
+          "(?i)exploit:sexploit", \
+          "(?i)cloud:☁️", \
+          "(?i)application:app", \
+          "(?i)budget:💰", \
+          "(?i)#phishing:🎣", \
+          "(?i)attacker:lover", \
+          "(?i)password:ASSword", \
+          "(?i)govsec:govSex", \
+          "(?i)government:.gov", \
+          "(?i)warning:⚠️", \
+          "(?i)danger:danger🚨", \
+          "(?i)python:python🐍", \
+          "(?i)important:impotent", \
+          "(?i)importance:impotence", \
+          "(?i)hacking:🪓", \
+          "(?i)budget:potato", \
+          "(?i)budget:potato", \
         ]

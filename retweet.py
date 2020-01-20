@@ -95,12 +95,17 @@ for tweet in reversed(fetchedTweets):
             sleep(seconds_between_retweets)
 
     # Some basic error handling. Will print out why retweet failed, into your terminal.
+
     except tweepy.TweepError as error:
         if(error.api_code == 327):
             print('Already retweeted,not in store, please synchronize tweetstore')
         elif(error.api_code == 326):
             print('This account is temporarily locked. Please log in to https://twitter.com to unlock your account.')
             sleep(60)
+        elif(error.api_code == 187):
+            print('Status is duplicate, tweet details: ')
+            print(textToQuote+" - "+URL_to_RT)
+            print("TweetID: "+str(tweet.id))
         else:
             print('\nError. Retweet not successful. Reason: ')
             print(error.reason)
