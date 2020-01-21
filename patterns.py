@@ -1,17 +1,19 @@
 substitutions = \
-        [ "(?i)infosec:InfoSex", \
+        [ "(?i)infosecurity:InfoSex", \
+          "(?i)infosec:InfoSex", \
           "(?i)secop?:SexOps", \
           "(?i)#potato:🥔", \
           "(?i)potato:🥔", \
-          "(?i)cybersec:potatosex", \
+          "(?i)cybersecurity:potatoSex", \
+          "(?i)cybersec:potatoSex", \
           "(?i)cyber:potato", \
           "(?i)critical:🦞", \
           "(?i)Microsoft:$MSFT", \
-          "(?i)threat:hype", \
+          "(?i)threat:Hype", \
           "(?i)ransomware:handsomeware", \
-          "(?i)bigdata:bigblabla", \
+          "(?i)bigdata:bigBlaBla", \
           "(?i)2FA:0fuckAuth", \
-          "(?i)security:insecurity", \
+          "(?i)security:inSecurity", \
           "(?i)hackers:🐱💻", \
           "(?i)hacker:🐱💻", \
           "(?i) and : & ", \
@@ -61,6 +63,9 @@ substitutions = \
           "(?i)important:impotent", \
           "(?i)importance:impotence", \
           "(?i)hacking:🪓", \
+          "(?i)citrix:shitrix💩", \
+          "(?i)budget:potato", \
+          "(?i)budget:potato", \
           "(?i)budget:potato", \
           "(?i)budget:potato", \
         ]
