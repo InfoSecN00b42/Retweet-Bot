@@ -64,8 +64,9 @@ substitutions = \
           "(?i)importance:impotence", \
           "(?i)hacking:🪓", \
           "(?i)citrix:shitrix💩", \
-          "(?i)budget:potato", \
-          "(?i)budget:potato", \
-          "(?i)budget:potato", \
+          "(?i)hospital:🏥", \
+          "(?i)virus:virii🦠🧫", \
+          "(?i)robot:🤖", \
+          "(?i)robots:🤖", \
           "(?i)budget:potato", \
         ]
