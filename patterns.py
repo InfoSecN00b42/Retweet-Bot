@@ -70,4 +70,5 @@ substitutions = \
           "(?i)robots:🤖", \
           "(?i)budget:potato", \
           "(?i)corona:👑", \
+          "(?i)covid:🧼👋😷🦠🏥", \
         ]
