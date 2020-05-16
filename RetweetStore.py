@@ -1,4 +1,4 @@
-import pickle
+import pickle, os
 from RetweetObject import RetweetObject
 
 
@@ -13,6 +13,9 @@ class RetweetStore:
         try:
             fileHandle = open(fileName, mode='rb')
             opened = True
+            if os.path.getsize(fileHandle) > 0:
+                print("0-filesize detected, unpickling")
+                self.__tweetStore = pickle.Unpickler(fileHandle)
             self.__tweetStore = pickle.load(fileHandle)
 
         except FileNotFoundError:
